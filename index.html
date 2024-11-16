@@ -8,7 +8,7 @@
     <meta name="description" content="Agustin Marmor - Portfolio">
     <title>Agustin Marmor - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    
+
     <script>
         // Animation logic to add 'animate' class on scroll
         document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +23,22 @@
             }, { threshold: 0.2 });
 
             elements.forEach(el => observer.observe(el));
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const links = document.querySelectorAll("nav a");
+
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href").substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    targetElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                });
+            });
         });
     </script>
 </head>
