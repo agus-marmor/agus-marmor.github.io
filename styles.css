@@ -33,8 +33,8 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #00bcd4; /* Change to cyan on hover */
-    color: #121212; /* Dark text on hover for contrast */
+    background-color: #077f8f; /* Change to cyan on hover */
+    color: #ffffff; /* Dark text on hover for contrast */
     transform: scale(1.05); /* Slightly enlarge the button */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Add a deeper shadow on hover */
 }
