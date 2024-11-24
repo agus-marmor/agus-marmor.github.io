@@ -29,16 +29,22 @@
             const links = document.querySelectorAll("nav a");
 
             links.forEach(link => {
-                link.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute("href").substring(1);
-                    const targetElement = document.getElementById(targetId);
+                // Only apply smooth scroll for internal links (those starting with #)
+                const href = link.getAttribute("href");
+                if (href && href.startsWith("#")) {
+                    link.addEventListener("click", (e) => {
+                        e.preventDefault();  // Prevent default behavior only for smooth scroll links
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
 
-                    targetElement.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+                        }
                     });
-                });
+                }
             });
         });
     </script>
@@ -51,7 +57,9 @@
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            <a href="reflection/" target="_self">Reflection</a>
         </nav>
+
 
     </header>
 

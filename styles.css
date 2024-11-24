@@ -210,3 +210,12 @@ header nav a:hover {
         transform: translateY(0);
     }
 }
+
+/* Reflection page */
+.reflection {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 15px;
+    animation: fadeIn 1.5s ease-in-out;
+}
