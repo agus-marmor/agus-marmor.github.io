@@ -219,3 +219,19 @@ header nav a:hover {
     border-radius: 15px;
     animation: fadeIn 1.5s ease-in-out;
 }
+.reflection p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    text-align: justify;
+    line-height: 1.8;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.reflection hr {
+    margin: 2rem 0;
+    border: 1px solid #333;
+    width: 50%;
+    /* Center the line */
+    margin-left: auto;
+    margin-right: auto;
+}
