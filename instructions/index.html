@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instruction Manual">
+    <link rel="stylesheet" href="../public/protected_styles.css">
+    <title>Instruction Manual</title>
+</head>
+
+<body>
+    <header class="nav-var">
+        <nav>
+            <a href="../">Home</a>
+        </nav>
+    </header>
+    <h1>Protected Page</h1>
+
+    <!-- Login Section -->
+    <div id="login-section" class="login-form">
+        <p>Please enter the password to access this page:</p>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <!-- Protected Content Section -->
+    <div id="content-section" class="hidden-content">
+        <div class="content">
+            <h2>Instruction Manual</h2>
+            <button><a href="../files/Instruction_Manual.pdf" target="_blank"></a></button>
+
+
+        </div>
+    </div>
+    <script>
+        const storedHash = "d7ecdf25eaf3deba0f2628771dbdd22d4138ab6cf38f91ed02a2ca0dec7c8ab7";
+
+        function bufferToHex(buffer) {
+            return Array.from(new Uint8Array(buffer))
+                .map(byte => byte.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        async function checkPassword() {
+            const password = document.getElementById("password").value.trim();
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+
+            const hashHex = bufferToHex(hashBuffer);
+
+            if (hashHex === storedHash) {
+                document.querySelector(".hidden-content").style.display = 'block';
+                document.querySelector(".login-form").style.display = 'none';
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+
+        }
+
+
+
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2024 Agustin Marmor. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

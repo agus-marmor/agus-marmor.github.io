@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agustin Marmor - Portfolio">
     <title>Agustin Marmor - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./public/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script>
@@ -52,7 +52,6 @@
 
 <body>
     <header class="navbar">
-        <h1></h1>
         <nav>
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
@@ -81,26 +80,34 @@
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-list">
-            <div class="project">
-                <img src="images/ucf_tab.png" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero euismod, ultricies nunc nec,
-                    tincidunt nunc. Nullam</p>
-            </div>
+            <a href="instructions/" target="_self" class="project-link">
+                <div class="project">
+                    <img src="images/manual.jpg" alt="Instructions">
+                    <h3>Instruction Manual</h3>
+                    <p>Wrote an Instruction Manual explaining how to connect a MongoDB database to a Next.js project.
+                        This
+                        project helped me understand how Instruction Manuals work, how to properly format them, and how
+                        to
+                        explain something in a step-by-step fashion.</p>
+                </div>
+            </a>
+            <a href="resume/" target="_self" class="project-link">
+                <div class="project">
+                    <img src="images/resume.png" alt="Resume, Cover Letter, & Mini interview image representation">
+                    <h3>Resume, Cover Letter, & Mini Interview</h3>
+                    <p>Formulated a Cover Letter, Resume, and an Audio file simulating a real life interview for a Computer
+                        Science job.</p>
+                </div>
+            </a>
 
-            <div class="project">
-                <img src="images/ucf_tab.png" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero euismod, ultricies nunc nec,
-                    tincidunt nunc. Nullam</p>
-            </div>
-
-            <div class="project">
-                <img src="images/ucf_tab.png" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero euismod, ultricies nunc nec,
-                    tincidunt nunc. Nullam</p>
-            </div>
+            <a href="proposal/" target="_self" class="project_link">
+                <div class="project">
+                    <img src="images/research-proposal.png" alt="Research Proposal">
+                    <h3>Research Proposal</h3>
+                    <p>Developed a Research proposal for UCF's Student Research Grant. This proposal talked about doing
+                        research for the use of Augmented Reality for vocational Training.</p>
+                </div>
+            </a>
         </div>
     </section>
 
